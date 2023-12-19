@@ -17,9 +17,9 @@ public:
 };
 void Dequeue::rear_insert(){
 int item;
- cout<<<"Enter a value"<<endl;
+ cout<<"Enter a value"<<endl;
     cin>>item;
-if(front==0;&& rear==size-1){
+if(front==0&& rear==size-1){
     cout<<"Queue is full"<<endl;
 }else if(front==rear+1){
  cout<<"Queue is full"<<endl;
@@ -56,7 +56,7 @@ rear=0;
 d[front]=data;
 }else{
     if(front!=0){
-        front=front=1;
+        front=front+1;
         d[front]=data;
     }else{
     for(int i=rear;i>=front;i--){
@@ -67,7 +67,7 @@ d[front]=data;
 }
 }
 void Dequeue::front_delete(){
-if(front==-1&7rear==-1){
+if(front==-1&&rear==-1){
     cout<<"Queue is empty"<<endl;
 }
 else if(front==rear){
@@ -91,34 +91,23 @@ cout<<"Deleted data is "<<d[rear];
 rear--;
 }
 }
+void Dequeue::display(){
+    int data;
+    if(front==-1&&rear==-1){
+        cout<<"Queue is empty"<<endl;
+    }else{
+            for (int i = front; i<=rear; i++)
+            {
+                cout<<d[i]<<endl;
+            }
+            
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+void Dequeue::totalelement() {
+    int total = (front == -1 && rear == -1) ? 0 : (rear - front + 1);
+    cout << "Total number of elements: " << total << endl;
+}
 int main(){
 int choice;
 Dequeue d;
@@ -154,4 +143,3 @@ default:
 }
 return 0;
 }
-
