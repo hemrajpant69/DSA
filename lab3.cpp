@@ -37,6 +37,7 @@ else if(front==-1&&rear==-1){
     d[i-1]=d[i];
    }
    d[rear]=item;
+   front--;
   }
 }
 
@@ -63,6 +64,7 @@ d[front]=data;
         d[i+1]=d[i];
     }
     d[front]=data;
+    rear++;
     }
 }
 }
@@ -76,7 +78,7 @@ else if(front==rear){
     rear=0;
 } else{
 cout<<"deleted element is"<<d[front]<<endl;
-front++;
+front=front+1;
 }
 }
 void Dequeue::rear_delete(){
@@ -88,7 +90,7 @@ front=0;
 rear=0;
 }else{
 cout<<"Deleted data is "<<d[rear];
-rear--;
+rear=rear-1;
 }
 }
 void Dequeue::display(){
